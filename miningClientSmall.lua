@@ -2,7 +2,7 @@
 local pretty = require "cc.pretty"
 
 ---@class scm
-local scm = require("scm")
+local scm = require("./scm")
 ---@class SettingManager
 local sM = scm:load("settingsManager")
 ---@class HelperFunctions
