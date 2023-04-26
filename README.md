@@ -9,6 +9,6 @@ miningClientSmall config
 ```
 
 to setup the Libary in the Console.
-Very much VIP.
+Very much WIP.
 
 So far only the Scanning-Radius & Mining-Diameteris are relevant
