@@ -20,12 +20,23 @@ args = { ... }
 --Functions
 local function facingPostition()
     ---TODO: GPS
+    term.clear()
+    print("Unequip everything")
+    print("on the turtle!")
+    print("")
+    print("requires in inventory:")
+    print("1x geoscanner")
+    print("1x chunkloader")
+    print("1x pickaxe (diamond)")
+    print("")
+    print("")
     print("Facing: X|Z|-X|-Z?")
 
     return read()
 end
 --- sets the config for the Miner
 local function config()
+
     print('Settings: ')
     print('miningDepth miningHight miningDiameter scanRadius')
     local input = {}
