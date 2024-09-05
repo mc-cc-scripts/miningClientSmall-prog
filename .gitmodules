@@ -1,0 +1,6 @@
+[submodule "turtleEmulator-lib"]
+	path = turtleEmulator-lib
+	url = https://github.com/mc-cc-scripts/turtleEmulator-lib
+[submodule "libs/miningClient-lib"]
+	path = libs/miningClient-lib
+	url = https://github.com/mc-cc-scripts/miningClient-lib.git
