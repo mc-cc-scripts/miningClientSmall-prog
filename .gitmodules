@@ -4,3 +4,9 @@
 [submodule "libs/miningClient-lib"]
 	path = libs/miningClient-lib
 	url = https://github.com/mc-cc-scripts/miningClient-lib.git
+[submodule "turtleController-lib"]
+	path = turtleController-lib
+	url = https://github.com/mc-cc-scripts/turtleController-lib.git
+[submodule "scanner-lib"]
+	path = scanner-lib
+	url = https://github.com/mc-cc-scripts/scanner-lib.git
