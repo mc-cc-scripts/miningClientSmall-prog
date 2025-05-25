@@ -74,6 +74,19 @@ local function createPoints(turtle, distance, areaSize)
   end
   return pointTable
 end
+
+local function countblocks(blockName)
+  local count = 0
+  local lastBlock
+  for _, block in pairs(turtleEmulator.blocks) do
+    if block.item.name == blockName then
+      count = count + 1
+      lastBlock = block
+    end
+  end
+  return count
+end
+
 local function beforeEach()
   local geoScannerItem = {
     name = "advancedperipherals:geo_scanner",
@@ -127,6 +140,7 @@ local function beforeEach()
 end
 
 
+
 describe("empty World", function()
   before_each(function()
     beforeEach()
@@ -160,18 +174,10 @@ describe("World with ores", function()
     ---@cast geoScannerPeripheral GeoScanner
     geoScannerPeripheral.scanEmulator = true
     miningClient.scanStartFacingTo = "X"
+    assert.are.equal(15, countblocks("minecraft:deepslate_iron_ore"))
     miningClient:main(createPoints(turtle, 2, 1))
-    local count = 0
-    local dirt
-    for _, block in pairs(turtleEmulator.blocks) do
-      if block.item.name == "minecraft:deepslate_iron_ore" then
-        count = count + 1
-      elseif block.item.name == "minecraft:dirt" then
-        dirt = block
-      else
-        error("unknown block found")
-      end
-    end
+    local count = countblocks("minecraft:deepslate_iron_ore")
+    local dirt = countblocks("minecraft:dirt")
     assert.are.equal(0, count)
     assert.are.equal(Vector.new(0, 0, 0), turtle.position)
     assert.are.equal(Vector.new(1, 0, 0), turtle.facing)

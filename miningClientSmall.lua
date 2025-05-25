@@ -73,3 +73,5 @@ local function main()
 end
 
 main()
+
+shell.run("gps", "host", x, y, z)
