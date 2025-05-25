@@ -67,7 +67,7 @@ local function main()
         config()
         return
     end
-    miningLib.permanentFacingPostition = facingPostition()
+    miningLib.scanStartFacingTo = facingPostition()
 
     --Manuell Distance selection
     print("How far in Blocks?")
