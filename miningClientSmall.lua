@@ -1,5 +1,5 @@
 ---@class scm
-local scm = require("scm")
+local scm = require("./scm")
 ---@class HelperFunctions
 local helper = scm:load("helperFunctions")
 ---@class miningLib
