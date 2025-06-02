@@ -28,13 +28,13 @@
 ---@field equal function
 assert = assert
 
-local spath =
-debug.getinfo(1,'S').source:sub(2):gsub("/+", "/"):gsub("[^/]*$",""):gsub("/tests", ""):gsub("tests","")
-if spath == "" then
-  spath = "./"
-end
-require(spath.."ccPackage")
+package.path = "libs/?.lua;"
+    .. "libs/inventory/?.lua;"
+    .. "libs/peripherals/?.lua;"
+    .. package.path
 
+
+_G.settings = require("settings")
 local Vector = require("vector")
 local scanResultMock = require("scanResultMock")
 ---@type TurtleEmulator

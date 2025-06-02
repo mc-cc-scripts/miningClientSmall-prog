@@ -1,7 +1,5 @@
 ---@class scm
 local scm = require("scm")
----@class SettingManager
-local sM = scm:load("settingsManager")
 ---@class HelperFunctions
 local helper = scm:load("helperFunctions")
 ---@class miningLib
