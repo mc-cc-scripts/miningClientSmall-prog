@@ -30,11 +30,11 @@ jobs:
         luarocks install luasocket
         luarocks install luasec
 
-    - name: Git Submodule Update
+    - name: fetch dependencies
       run: |
-        git pull --recurse-submodules
-        git submodule update --init --remote --recursive
-
+        chmod +x ./fetch-deps.sh
+        ./fetch-deps.sh
+    
     - name: test
       run: |
         busted tests
