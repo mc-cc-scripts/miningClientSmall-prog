@@ -15,6 +15,8 @@ libs=(
     "miningClient-lib"
     "helperFunctions-lib"
     "eventHandler-lib"
+    "turtleResourceManager-lib"
+    "config-lib"
 )
 
 # Basic setup variables

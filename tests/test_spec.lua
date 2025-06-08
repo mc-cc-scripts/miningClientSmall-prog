@@ -122,6 +122,7 @@ local function beforeEach()
     package.loaded["miningClient"] = nil
   end
     -- reset globals
+  ---@type TurtleMock
   _G.turtle = turtleEmulator:createTurtle()
   local peripheral = turtle.getPeripheralModule()
   _G.peripheral = peripheral
@@ -158,6 +159,14 @@ describe("World with ores", function()
       beforeEach()
   end)
   it(" - cleared all Ores", function()
+    for i = 5, 15, 1 do
+      turtle.addItemToInventory({name = "minecraft:stone", count = 64, maxcount = 64, placeAble = true})
+    end
+    local tmpChest = {name = "enderchests:ender_chest", count = 1, maxcount = 1, placeAble = true}
+    turtle.addItemToInventory(tmpChest, 16)
+    local enderCHest = turtleEmulator:addInventoryToItem(tmpChest)
+
+    
     local mappingFunc = function(scanData)
       return {
         item = {
@@ -182,5 +191,6 @@ describe("World with ores", function()
     assert.are.equal(Vector.new(0, 0, 0), turtle.position)
     assert.are.equal(Vector.new(1, 0, 0), turtle.facing)
     assert.is.not_false(dirt)
+    assert.is.falsy(turtle.getItemDetail(10))
   end)
 end)
