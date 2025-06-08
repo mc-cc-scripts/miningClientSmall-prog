@@ -1,10 +1,5 @@
---Requirements
-local pretty = require "cc.pretty"
-
 ---@class scm
 local scm = require("./scm")
----@class SettingManager
-local sM = scm:load("settingsManager")
 ---@class HelperFunctions
 local helper = scm:load("helperFunctions")
 ---@class miningLib
@@ -53,7 +48,6 @@ local function config()
         };
         miningSettings = sM.setget('MiningSettings', miningSettings, miningSettings);
     end
-    pretty.pretty_print(miningSettings)
 end
 
 ---main script Function
